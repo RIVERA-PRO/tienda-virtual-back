@@ -5,7 +5,7 @@ const editUser = {
     edit: async (req, res) => {
         try {
             const { id } = req.params;
-            const { password, photo, name, email, rol } = req.body;
+            const { password, photo, name, email, rol, is_admin } = req.body;
 
             // Verificar si el usuario existe
             let user = await User.findById(id);
@@ -29,7 +29,9 @@ const editUser = {
             if (email) {
                 user.email = email;
             }
-
+            if (is_admin) {
+                user.is_admin = is_admin;
+            }
 
 
             // Verificar si se proporcionó una nueva contraseña

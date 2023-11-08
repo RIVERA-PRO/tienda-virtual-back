@@ -1,6 +1,6 @@
 import userRouter from './users.js'
 import publicacion from './publicacion.js'
-
+import carrito from './carrito.js'
 import express from 'express'
 let router = express.Router();
 
@@ -11,5 +11,5 @@ router.get('/', function (req, res, next) {
 
 router.use('/users', userRouter)
 router.use('/publicacion', publicacion)
-
+router.use('/carrito', carrito)
 export default router

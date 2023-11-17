@@ -8,4 +8,5 @@ const { compra } = compras;
 
 router.post("/", passport.authenticate("jwt", { session: false }), compra);
 
+
 export default router;

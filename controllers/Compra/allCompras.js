@@ -16,7 +16,7 @@ const carritoCompras = {
 
         try {
 
-            let compras = await Compra.find({ chapter_id: req.query.publicacion_id }).select('title cover_photo  price categoria user_id publicacion_id status totalAmount idTransaccion products createdAt').populate('user_id', 'name photo ')
+            let compras = await Compra.find({ chapter_id: req.query.publicacion_id }).select('title cover_photo  price categoria user_id publicacion_id status totalAmount idTransaccion products createdAt').populate('user_id', 'name photo mail')
 
             if (compras) {
                 return res.status(200).json({
